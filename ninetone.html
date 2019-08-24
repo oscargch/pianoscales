@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nine Tone Scales</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <!-- Header div -->
+      <div id="header">
+          <ul id="headertext">
+          <li><a href="index.html">Major</a></li>
+          <li><a href="minor.html">Minor</a></li>
+          <li><a href="harmonicminor.html">Harmonic Minor</a></li>
+          <li><a href="melodicminor.html">Melodic Minor</a></li>
+          <li><a href="blues.html">Blues</a></li>
+          <li><a href="majorpentatonic.html">Major Pentatonic</a></li>
+          <li><a href="minorpentatonic.html">Minor Pentatonic</a></li>
+          <li><a href="MajorBebop.html">Major Bebop</a></li>
+          <li><a href="MinorBebop.html">Minor Bebop</a></li>
+          <li><a href="diminished.html">Diminished</a></li>
+          <li><a href="superlocrian.html">Super Locrian</a></li>
+          <li style="font-weight:bold;"><a href="ninetone.html" style="color:red;">Nine Tone</a></li>
+          <li><a href="phrygiandominant.html">Phrygian Dominant</a></li>
+      </ul>
+    </ul>
+    <ul id="headertext2">
+        <p>Modes:</p>
+        <li><a href="ionian.html">Ionian</a></li>
+        <li><a href="dorian.html">Dorian</a></li>
+        <li><a href="phrygian.html">Phrygian</a></li>
+        <li><a href="lydian.html">Lydian</a></li>
+        <li><a href="mixolydian.html">Mixolydian</a></li>
+        <li><a href="aeolian.html">Aeolian</a></li>
+        <li><a href="locrian.html">Locrian</a></li>
+    </ul>
+      <!-- Header div -->
+      </div>
+  </header>
+
+  <!-- This is where the Container div begins -->
+  <div id="container">
+    <main>
+        <div id="main">
+            <div id="bio">
+                <h1 style="padding-left: 100px";>Nine Tone Scales</h1>
+                <hr>
+                <br>
+                <!-- <p>Click anywhere on the site to begin.</p> -->
+                <p>Use keys 1, 2, 3, 4, 5... to change the key.</p>
+                <p>Make sure your keyboard is in the English Input Source setting and not in other languages.</p>
+               
+                <p id="pianokey">Nine Tone C</p>
+                <img id="pianopic" src="ProjectResearch/Keyboard_Images/NineToneScale/nine_tone_C.png">
+            </div>
+        </div>
+    </main>
+
+</div> 
+<!-- This is where the Container div ends -->
+<div id="clr"></div>
+<footer>
+    <div id="footer">
+
+    </div>
+</footer>
+
+<script>
+  function getFullPath(keyName) {
+    return "ProjectResearch/Keyboard_Images/NineToneScale/"+ keyName+".png";
+  }
+  // image prefetching
+  document.addEventListener('DOMContentLoaded', function () {
+    var body = document.querySelector('body')
+    var keyImageMap = {
+      "1": {
+        imageSrc: "nine_tone_C",
+        displayText: "Nine Tone C"
+      },
+      "2": {
+        imageSrc: "nine_tone_Db",
+        displayText: "Nine Tone C# or Db"
+      },
+      "3": {
+        imageSrc: "nine_tone_D",
+        displayText: "Nine Tone D"
+      },
+      "4": {
+        imageSrc: "nine_tone_Eb",
+        displayText: "Nine Tone D# or Eb"
+      },
+      "5": {
+        imageSrc: "nine_tone_E",
+        displayText: "Nine Tone E"
+      },
+      "6": {
+        imageSrc: "nine_tone_F",
+        displayText: "Nine Tone F"
+      },
+      "7": {
+        imageSrc: "nine_tone_Gb",
+        displayText: "Nine Tone F# or Gb"
+      },
+      "8": {
+        imageSrc: "nine_tone_G",
+        displayText: "Nine Tone G"
+      },
+      "9": {
+        imageSrc: "nine_tone_Ab",
+        displayText: "Nine Tone G# or Ab"
+      },
+      "0": {
+        imageSrc: "nine_tone_A",
+        displayText: "Nine Tone A"
+      },
+      "-": {
+        imageSrc: "nine_tone_Bb",
+        displayText: "Nine Tone A# or Bb"
+      },
+      "=": {
+        imageSrc: "nine_tone_B",
+        displayText: "Nine Tone B"
+      },
+    }
+    var imageElement = document.getElementById('pianopic')
+    var scaleNameElement = document.getElementById('pianokey')
+    body.addEventListener('keydown', function (e) { // run this function every time user presees any key at all
+      console.log(e)
+      var majorScaleObject = keyImageMap[e.key]
+      if (majorScaleObject) {// check if key is valid
+        imageElement.src = getFullPath(majorScaleObject.imageSrc)
+        scaleNameElement.innerText = majorScaleObject.displayText
+      }
+    })
+  })
+  
+</script>
+
+  </body>
+</html>

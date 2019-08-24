@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Minor Pentatonic</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <!-- Header div -->
+      <div id="header">
+          <ul id="headertext">
+          <li><a href="index.html">Major</a></li>
+          <li><a href="minor.html">Minor</a></li>
+          <li><a href="harmonicminor.html">Harmonic Minor</a></li>
+          <li><a href="melodicminor.html">Melodic Minor</a></li>
+          <li><a href="blues.html">Blues</a></li>
+          <li><a href="majorpentatonic.html">Major Pentatonic</a></li>
+          <li style="font-weight:bold;"><a href="minorpentatonic.html" style="color:red;">Minor Pentatonic</a></li>
+          <li><a href="MajorBebop.html">Major Bebop</a></li>
+          <li><a href="MinorBebop.html">Minor Bebop</a></li>
+          <li><a href="diminished.html">Diminished</a></li>
+          <li><a href="superlocrian.html">Super Locrian</a></li>
+          <li><a href="ninetone.html">Nine Tone</a></li>
+          <li><a href="phrygiandominant.html">Phrygian Dominant</a></li>
+      </ul>
+    </ul>
+    <ul id="headertext2">
+        <p>Modes:</p>
+        <li><a href="ionian.html">Ionian</a></li>
+        <li><a href="dorian.html">Dorian</a></li>
+        <li><a href="phrygian.html">Phrygian</a></li>
+        <li><a href="lydian.html">Lydian</a></li>
+        <li><a href="mixolydian.html">Mixolydian</a></li>
+        <li><a href="aeolian.html">Aeolian</a></li>
+        <li><a href="locrian.html">Locrian</a></li>
+    </ul>
+      <!-- Header div -->
+      </div>
+  </header>
+
+  <!-- This is where the Container div begins -->
+  <div id="container">
+    <main>
+        <div id="main">
+            <div id="bio">
+                <h1 style="padding-left: 100px";>Minor Pentatonic</h1>
+                <hr>
+                <br>
+                <!-- <p>Click anywhere on the site to begin.</p> -->
+                <p>Use keys 1, 2, 3, 4, 5... to change the key.</p>
+                <p>Make sure your keyboard is in the English Input Source setting and not in other languages.</p>
+               
+                <p id="pianokey">C Minor Pentatonic</p>
+                <img id="pianopic" src="ProjectResearch/Keyboard_Images/MinorPentatonic/minor-pentatonic-C.png">
+            </div>
+        </div>
+    </main>
+
+</div> 
+<!-- This is where the Container div ends -->
+<div id="clr"></div>
+<footer>
+    <div id="footer">
+
+    </div>
+</footer>
+
+<script>
+  function getFullPath(keyName) {
+    return "ProjectResearch/Keyboard_Images/MinorPentatonic/"+ keyName+".png";
+  }
+  // image prefetching
+  document.addEventListener('DOMContentLoaded', function () {
+    var body = document.querySelector('body')
+    var keyImageMap = {
+      "1": {
+        imageSrc: "minor-pentatonic-C",
+        displayText: "C Minor Pentatonic"
+      },
+      "2": {
+        imageSrc: "minor-pentatonic-Db",
+        displayText: "C# or Db Minor Pentatonic"
+      },
+      "3": {
+        imageSrc: "minor-pentatonic-D",
+        displayText: "D Minor Pentatonic"
+      },
+      "4": {
+        imageSrc: "minor-pentatonic-Eb",
+        displayText: "D# or Eb Minor Pentatonic"
+      },
+      "5": {
+        imageSrc: "minor-pentatonic-E",
+        displayText: "E Minor Pentatonic"
+      },
+      "6": {
+        imageSrc: "minor-pentatonic-F",
+        displayText: "F Minor Pentatonic"
+      },
+      "7": {
+        imageSrc: "minor-pentatonic-Gb",
+        displayText: "F# or Gb Minor Pentatonic"
+      },
+      "8": {
+        imageSrc: "minor-pentatonic-G",
+        displayText: "G Minor Pentatonic"
+      },
+      "9": {
+        imageSrc: "minor-pentatonic-Ab",
+        displayText: "G# or Ab Minor Pentatonic"
+      },
+      "0": {
+        imageSrc: "minor-pentatonic-A",
+        displayText: "A Minor Pentatonic"
+      },
+      "-": {
+        imageSrc: "minor-pentatonic-Bb",
+        displayText: "A# or Bb Minor Pentatonic"
+      },
+      "=": {
+        imageSrc: "minor-pentatonic-B",
+        displayText: "B Minor Pentatonic"
+      },
+    }
+    var imageElement = document.getElementById('pianopic')
+    var scaleNameElement = document.getElementById('pianokey')
+    body.addEventListener('keydown', function (e) { // run this function every time user presees any key at all
+      console.log(e)
+      var majorScaleObject = keyImageMap[e.key]
+      if (majorScaleObject) {// check if key is valid
+        imageElement.src = getFullPath(majorScaleObject.imageSrc)
+        scaleNameElement.innerText = majorScaleObject.displayText
+      }
+    })
+  })
+  
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<!-- Still to add a sound clip for each scale along with a list that shows the proper fingering of each scale. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Major Scales</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <!-- Header div -->
+      <div id="header">
+          <ul id="headertext">
+          <li style="font-weight:bold;"><a href="index.html" style="color:red;">Major</a></li>
+          <li><a href="minor.html">Minor</a></li>
+          <li><a href="harmonicminor.html">Harmonic Minor</a></li>
+          <li><a href="melodicminor.html">Melodic Minor</a></li>
+          <li><a href="blues.html">Blues</a></li>
+          <li><a href="majorpentatonic.html">Major Pentatonic</a></li>
+          <li><a href="minorpentatonic.html">Minor Pentatonic</a></li>
+          <li><a href="MajorBebop.html">Major Bebop</a></li>
+          <li><a href="MinorBebop.html">Minor Bebop</a></li>
+          <li><a href="diminished.html">Diminished</a></li>
+          <li><a href="superlocrian.html">Super Locrian</a></li>
+          <li><a href="ninetone.html">Nine Tone</a></li>
+          <li><a href="phrygiandominant.html">Phrygian Dominant</a></li>
+      </ul>
+      <ul id="headertext2">
+          <p>Modes:</p>
+          <li><a href="ionian.html">Ionian</a></li>
+          <li><a href="dorian.html">Dorian</a></li>
+          <li><a href="phrygian.html">Phrygian</a></li>
+          <li><a href="lydian.html">Lydian</a></li>
+          <li><a href="mixolydian.html">Mixolydian</a></li>
+          <li><a href="aeolian.html">Aeolian</a></li>
+          <li><a href="locrian.html">Locrian</a></li>
+      </ul>
+      <!-- Header div -->
+      </div>
+  </header>
+
+  <!-- This is where the Container div begins -->
+  <div id="container">
+    <main>
+        <div id="main">
+            <div id="bio">
+                <h1 style="padding-left: 100px";>Major Scales</h1>
+                <hr>
+                <br>
+                <!-- <p>Click anywhere on the site to begin.</p> -->
+                <p>Use keys 1, 2, 3, 4, 5... to change the key.</p>
+                <p>Make sure your keyboard is in the English Input Source setting and not in other languages.</p>
+                <p>Fingering for three octave practice.</p>
+               
+                <p id="pianokey">C Major</p>
+                <img id="pianopic" src="ProjectResearch/Keyboard_Images/MajorScales/C.png">
+                <p style="text-align:center" id="leftFinger"> Left Hand_: 5, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, -1-, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 5</p>
+                <p style="text-align:center" id="rightFinger"> Right Hand: 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, -5-, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1</p>
+            </div>
+        </div>
+    </main>
+
+</div> 
+<!-- This is where the Container div ends -->
+<div id="clr"></div>
+<footer>
+    <div id="footer">
+
+    </div>
+</footer>
+
+<script>
+
+// This is the part that defines what will be replaced in the path.
+  function getFullPath(keyName) {
+    return "ProjectResearch/Keyboard_Images/MajorScales/"+ keyName+".png";
+  }
+
+  // image prefetching
+
+  // <!-- This part has the eventListener that waits until the contents of the website are loaded
+  // so it doesn't work before that.
+  // It also has the querySelector so it works on the body of the website.
+  // And lastly contains the KeyImageMap with two variables. 
+  // It can also be used with one variable only. Like this:
+  //  "1": "C",
+  //  "2": "Db",
+  // etc.
+  document.addEventListener('DOMContentLoaded', function () {
+    var body = document.querySelector('body')
+    var keyImageMap = {
+      "1": {
+        imageSrc: "C",
+        displayText: "C Major",
+        leftFinger: "Left Hand_: 5, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, -1-, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 5",
+        rightFinger: "Right Hand: 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, -5-, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1"
+      },
+      "2": {
+        imageSrc: "Db",
+        displayText: "C# or Db Major",
+        leftFinger: "Left Hand_: 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, -2-, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3",
+        rightFinger: "Right Hand: 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, -2-, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2"
+      },
+      "3": {
+        imageSrc: "D",
+        displayText: "D Major",
+        leftFinger: "Left Hand_: 5, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, -1-, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 5",
+        rightFinger: "Right Hand: 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, -5-, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1"
+      },
+      "4": {
+        imageSrc: "Eb",
+        displayText: "D# or Eb Major",
+        leftFinger: "Left Hand_: 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, -2-, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3",
+        rightFinger: "Right Hand: 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, -3-, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3"
+      },
+      "5": {
+        imageSrc: "E",
+        displayText: "E Major",
+        leftFinger: "Left Hand_: 5, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, -1-, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 5",
+        rightFinger: "Right Hand: 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, -5-, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1"
+      },
+      "6": {
+        imageSrc: "F",
+        displayText: "F Major",
+        leftFinger: "Left Hand_: 5, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, -1-, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 5",
+        rightFinger: "Right Hand: 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, -4-, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1"
+      },
+      "7": {
+        imageSrc: "Gb",
+        displayText: "F# or Gb Major",
+        leftFinger: "Left Hand_: 1,2,3,4,5,3,4,5",
+        rightFinger: "Right Hand: 1,2,3,1,2,3,4,5"
+      },
+      "8": {
+        imageSrc: "G",
+        displayText: "G Major",
+        leftFinger: "Left Hand_: 1,2,3,4,5,3,4,5",
+        rightFinger: "Right Hand: 1,2,3,1,2,3,4,5"
+      },
+      "9": {
+        imageSrc: "Ab",
+        displayText: "G# or Ab Major",
+        leftFinger: "Left Hand_: 1,2,3,4,5,3,4,5",
+        rightFinger: "Right Hand: 1,2,3,1,2,3,4,5"
+      },
+      "0": {
+        imageSrc: "A",
+        displayText: "A Major",
+        leftFinger: "Left Hand_: 1,2,3,4,5,3,4,5",
+        rightFinger: "Right Hand: 1,2,3,1,2,3,4,5"
+      },
+      "-": {
+        imageSrc: "Bb",
+        displayText: "A# or Bb Major",
+        leftFinger: "Left Hand_: 1,2,3,4,5,3,4,5",
+        rightFinger: "Right Hand: 1,2,3,1,2,3,4,5"
+      },
+      "=": {
+        imageSrc: "B",
+        displayText: "B Major",
+        leftFinger: "Left Hand_: 1,2,3,4,5,3,4,5",
+        rightFinger: "Right Hand: 1,2,3,1,2,3,4,5"
+      },
+    }
+
+
+    var imageElement = document.getElementById('pianopic') //this will get the element 'pianopic' and be able to change it.
+    var scaleNameElement = document.getElementById('pianokey') //this will get the element 'pianokey' and be able to change it.
+    var fingerNameElement1 = document.getElementById('leftFinger')
+    var fingerNameElement2 = document.getElementById('rightFinger')
+
+    body.addEventListener('keydown', function (e) { // Listen for a pressed key. Then run this function every time user presses any key at all.
+      console.log(e)
+      var majorScaleObject = keyImageMap[e.key]
+      if (majorScaleObject) { // check if key is valid from the Map.
+        imageElement.src = getFullPath(majorScaleObject.imageSrc)
+        scaleNameElement.innerText = majorScaleObject.displayText
+        fingerNameElement1.innerText = majorScaleObject.leftFinger
+        fingerNameElement2.innerText = majorScaleObject.rightFinger
+      }
+    })
+  })
+
+
+  
+</script>
+
+  </body>
+</html>

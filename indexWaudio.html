@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Major Scales</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <!-- Header div -->
+      <div id="header">
+          <ul id="headertext">
+          <li style="font-weight:bold;"><a href="indexWaudio.html" style="color:red;">Major</a></li>
+          <li><a href="minor.html">Minor</a></li>
+          <li><a href="harmonicminor.html">Harmonic Minor</a></li>
+          <li><a href="melodicminor.html">Melodic Minor</a></li>
+          <li><a href="blues.html">Blues</a></li>
+          <li><a href="majorpentatonic.html">Major Pentatonic</a></li>
+          <li><a href="minorpentatonic.html">Minor Pentatonic</a></li>
+          <li><a href="MajorBebop.html">Major Bebop</a></li>
+          <li><a href="MinorBebop.html">Minor Bebop</a></li>
+          <li><a href="diminished.html">Diminished</a></li>
+          <li><a href="superlocrian.html">Super Locrian</a></li>
+          <li><a href="ninetone.html">Nine Tone</a></li>
+          <li><a href="phrygiandominant.html">Phrygian Dominant</a></li>
+      </ul>
+      <!-- Header div -->
+      </div>
+  </header>
+
+  <!-- This is where the Container div begins -->
+  <div id="container">
+    <main>
+        <div id="main">
+            <div id="bio">
+                <h1 style="padding-left: 100px";>Major Scales</h1>
+                <hr>
+                <br>
+                <!-- <p>Click anywhere on the site to begin.</p> -->
+                <p>Use keys 1, 2, 3, 4, 5... to change the key.</p>
+                <p>Make sure your keyboard is in the English Input Source setting and not in other languages.</p>
+               
+                <p id="pianokey">C Major</p>
+                <img id="pianopic" src="ProjectResearch/Keyboard_Images/MajorScales/C.png">
+            </div>
+        </div>
+
+
+
+
+
+    </main>
+
+</div> 
+<!-- This is where the Container div ends -->
+<div id="clr"></div>
+<footer>
+    <div id="footer">
+
+    </div>
+</footer>
+
+
+
+<script>
+
+// This is the part that defines what will be replaced in the path.
+  function getFullPath(keyName) {
+    return "ProjectResearch/Keyboard_Images/MajorScales/"+ keyName+".png";
+  }
+
+  // image prefetching
+
+  // <!-- This part has the eventListener that waits until the contents of the website are loaded
+  // so it doesn't work before that.
+  // It also has the querySelector so it works on the body of the website.
+  // And lastly contains the KeyImageMap with two variables. 
+  // It can also be used with one variable only. Like this:
+  //  "1": "C",
+  //  "2": "Db",
+  // etc.
+  document.addEventListener('DOMContentLoaded', function () {
+    var body = document.querySelector('body')
+    var keyImageMap = {
+      "1": {
+        imageSrc: "C",
+        displayText: "C Major"
+      },
+      "2": {
+        imageSrc: "Db",
+        displayText: "C# or Db Major"
+      },
+      "3": {
+        imageSrc: "D",
+        displayText: "D Major"
+      },
+      "4": {
+        imageSrc: "Eb",
+        displayText: "D# or Eb Major"
+      },
+      "5": {
+        imageSrc: "E",
+        displayText: "E Major"
+      },
+      "6": {
+        imageSrc: "F",
+        displayText: "F Major"
+      },
+      "7": {
+        imageSrc: "Gb",
+        displayText: "F# or Gb Major"
+      },
+      "8": {
+        imageSrc: "G",
+        displayText: "G Major"
+      },
+      "9": {
+        imageSrc: "Ab",
+        displayText: "G# or Ab Major"
+      },
+      "0": {
+        imageSrc: "A",
+        displayText: "A Major"
+      },
+      "-": {
+        imageSrc: "Bb",
+        displayText: "A# or Bb Major"
+      },
+      "=": {
+        imageSrc: "B",
+        displayText: "B Major"
+      },
+    }
+
+
+    var imageElement = document.getElementById('pianopic') //this will get the element 'pianopic' and be able to change it.
+    var scaleNameElement = document.getElementById('pianokey') //this will get the element 'pianokey' and be able to change it.
+
+
+    body.addEventListener('keydown', function (e) { // Listen for a pressed key. Then run this function every time user presses any key at all.
+      console.log(e)
+      var majorScaleObject = keyImageMap[e.key]
+      if (majorScaleObject) { // check if key is valid from the Map.
+        imageElement.src = getFullPath(majorScaleObject.imageSrc)
+        scaleNameElement.innerText = majorScaleObject.displayText
+
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`); // Estas cuatro lineas son de WesCourses. Son las que tocan el audio con la key. No estan asignadas con el KeyMap de las otras.
+      console.log(audio);
+      if(!audio) return;
+      audio.play();
+      }
+    })
+  })
+
+  // window.addEventListener('keydown'), function(e) {
+  //   const audio = document.querySelector(`audio[data-key="${e.keyCode}]`);
+  //   console.log(audio);
+  // }
+ 
+</script>
+
+<audio data-key="49" src="/ProjectResearch/Keyboard_Sounds/Major/445632__djfroyd__c-major-scale.wav"></audio>
+
+  </body>
+</html>
