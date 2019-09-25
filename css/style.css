@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+body {
+
+  width: auto;
+}
+
 a {
   color: white;
 }
@@ -15,14 +20,26 @@ hr {
   border-top: 3px double #8c8b8b;
 }
 
+#header {
+  width: 1fr;
+  height: auto;
+  display: grid;
+  grid-template-rows: auto;
+  text-align: justify;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+  overflow: hidden;
+}
+
 #header ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  float: right;
+  /* float: right; */
+  text-align: center;
   font-family: verdana;
   position:relative;
-  bottom: 30px;
+  /* bottom: 10px; */
 }
 
 #header p {
@@ -32,13 +49,13 @@ hr {
 }
 
 #chordProgs {
-  display: block;
+  display: grid;
   margin-left: auto;
   margin-right: auto;
   padding-top: 20px;
   padding-bottom: 20px;
-  height: 800px;
-  width: 1400px;
+  height: auto;
+  width: 70%;
 }
 
 ul {
@@ -54,7 +71,7 @@ ul {
 }
 
 p {
-  margin: 10px;
+  margin: 3px;
 }
 
 a:hover {
@@ -81,16 +98,29 @@ a:hover {
 } */
 
 #main {
-  float: left;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  /* float: left; */
   width: 100%;
 }
 
+#container {
+  /* background: black; */
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  align-self: center;
+}
+
 #bio    {
+  display: grid;
   padding: 10px;
   border: solid;
   border-width: 3px;
   border-radius: 10px;
   margin: 10px;
+  text-overflow: ellipsis;
 }
 
 #bio    h2 {
@@ -166,8 +196,8 @@ transform: scale(1.2);
 }
 
 #footer {
+  height: 100vh;
   background-color: blue;
-  padding: 30px;
 }
 
 #clr {
@@ -175,14 +205,15 @@ transform: scale(1.2);
 }
 
 #pianopic {
-  display: block;
+  display: grid;
   margin-left: auto;
   margin-right: auto;
   padding-top: 0px;
   padding-bottom: 20px;
-  height: 300px;
-  width: 800px;
   border-radius: 25px;
+  width: 80%;
+  height: auto;
+  max-width: 800px;
 }
 
 #pianokey {
