@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+body {
+  display: grid;
+}
+
 a {
   color: white;
 }
@@ -204,7 +208,8 @@ transform: scale(1.2);
 }
 
 #footer {
-  height: 100vh;
+  display: grid;
+  height: 35vh;
   background-color: blue;
 }
 
@@ -214,6 +219,8 @@ transform: scale(1.2);
 
 #pianopic {
   display: grid;
+  grid-template-columns: 10px 10px 10px;
+  grid-template-rows: 10;
   margin-left: auto;
   margin-right: auto;
   padding-top: 0px;
