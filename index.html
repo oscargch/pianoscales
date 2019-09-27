@@ -61,6 +61,21 @@
                 
                 <p style="text-align:center" id="leftFinger"> Left Hand_: 5, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, -1-, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 5</p>
                 <p style="text-align:center" id="rightFinger"> Right Hand: 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, -5-, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1</p>
+
+                <ul id="keyboardLinks">
+                  <li class="major-scale-transition">C</li>
+                  <li class="major-scale-transition">C#</li>
+                  <li class="major-scale-transition">D</li>
+                  <li class="major-scale-transition">D#</li>
+                  <li class="major-scale-transition">E</li>
+                  <li class="major-scale-transition">F</li>
+                  <li class="major-scale-transition">F#</li>
+                  <li class="major-scale-transition">G</li>
+                  <li class="major-scale-transition">G#</li>
+                  <li class="major-scale-transition">A</li>
+                  <li class="major-scale-transition">A#</li>
+                  <li class="major-scale-transition">B</li>
+              </ul>
             </div>
         <!-- </div> -->
     <!-- </main> -->
@@ -94,74 +109,88 @@
   // etc.
   document.addEventListener('DOMContentLoaded', function () {
     var body = document.querySelector('body')
-    var keyImageMap = {
-      "1": {
+    var keyScaleMap = {
+      "1": "C",
+      "2": "C#",
+      "3": "D",
+      "4": "D#",
+      "5": "E",
+      "6": "F",
+      "7": "F#",
+      "8": "G",
+      "9": "G#",
+      "0": "A",
+      "-": "A#",
+      "=": "B",
+    }
+    var scaleImageMap = {
+      "C": {
         imageSrc: "C",
         displayText: "C Major",
         leftFinger: "Left Hand_: 5, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, -1-, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 5",
         rightFinger: "Right Hand: 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, -5-, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1"
       },
-      "2": {
+      "C#": {
         imageSrc: "Db",
         displayText: "C# or Db Major",
         leftFinger: "Left Hand_: 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, -2-, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3",
         rightFinger: "Right Hand: 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, -2-, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2"
       },
-      "3": {
+      "D": {
         imageSrc: "D",
         displayText: "D Major",
         leftFinger: "Left Hand_: 5, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, -1-, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 5",
         rightFinger: "Right Hand: 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, -5-, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1"
       },
-      "4": {
+      "D#": {
         imageSrc: "Eb",
         displayText: "D# or Eb Major",
         leftFinger: "Left Hand_: 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, -2-, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3",
         rightFinger: "Right Hand: 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, -3-, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3"
       },
-      "5": {
+      "E": {
         imageSrc: "E",
         displayText: "E Major",
         leftFinger: "Left Hand_: 5, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, -1-, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 5",
         rightFinger: "Right Hand: 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, -5-, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1"
       },
-      "6": {
+      "F": {
         imageSrc: "F",
         displayText: "F Major",
         leftFinger: "Left Hand_: 5, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, -1-, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 5",
         rightFinger: "Right Hand: 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, -4-, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1"
       },
-      "7": {
+      "F#": {
         imageSrc: "Gb",
         displayText: "F# or Gb Major",
         leftFinger: "Left Hand_: 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, -2-, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4",
         rightFinger: "Right Hand: 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, -3-, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2"
       },
-      "8": {
+      "G": {
         imageSrc: "G",
         displayText: "G Major",
         leftFinger: "Left Hand_: 5, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, -1-, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 5",
         rightFinger: "Right Hand: 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, -5-, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1"
       },
-      "9": {
+      "G#": {
         imageSrc: "Ab",
         displayText: "G# or Ab Major",
         leftFinger: "Left Hand_: 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, -2-, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3",
         rightFinger: "Right Hand: 2, 3, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, -3-, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 3, 2"
       },
-      "0": {
+      "A": {
         imageSrc: "A",
         displayText: "A Major",
         leftFinger: "Left Hand_: 5, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, -1-, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 5",
         rightFinger: "Right Hand: 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, -5-, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1"
       },
-      "-": {
+      "A#": {
         imageSrc: "Bb",
         displayText: "A# or Bb Major",
         leftFinger: "Left Hand_: 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, -2-, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3",
         rightFinger: "Right Hand: 3, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, -4-, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 3"
       },
-      "=": {
+      "B": {
         imageSrc: "B",
         displayText: "B Major",
         leftFinger: "Left Hand_: 4, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, 1, 3, 2, 1, 4, 3, 2, -1-, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 4",
@@ -175,14 +204,29 @@
     var fingerNameElement1 = document.getElementById('leftFinger')
     var fingerNameElement2 = document.getElementById('rightFinger')
 
-    body.addEventListener('keydown', function (e) { // Listen for a pressed key. Then run this function every time user presses any key at all.
-      console.log(e)
-      var majorScaleObject = keyImageMap[e.key]
-      if (majorScaleObject) { // check if key is valid from the Map.
-        imageElement.src = getFullPath(majorScaleObject.imageSrc)
+    function loadMajorScale(majorScaleObject) {
+      imageElement.src = getFullPath(majorScaleObject.imageSrc)
         scaleNameElement.innerText = majorScaleObject.displayText
         fingerNameElement1.innerText = majorScaleObject.leftFinger
         fingerNameElement2.innerText = majorScaleObject.rightFinger
+    }
+
+    document.querySelectorAll('.major-scale-transition').forEach(function (element) {
+      console.log("Adding event listener on ", element)
+      element.addEventListener('click', function(event) {
+        console.log('got clicked', event)
+        var scale = event.target.innerText
+        var majorScaleObject = scaleImageMap[scale]
+        loadMajorScale(majorScaleObject)
+      })
+    })
+
+    body.addEventListener('keydown', function (e) { // Listen for a pressed key. Then run this function every time user presses any key at all.
+      console.log(e)
+      var scale = keyScaleMap[e.key]
+      var majorScaleObject = scaleImageMap[scale]
+      if (majorScaleObject) { // check if key is valid from the Map
+        loadMajorScale(majorScaleObject)
       }
     })
   })

@@ -140,6 +140,34 @@ a:hover {
   letter-spacing: 0.2em;
 }
 
+#bio ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* float: right; */
+  text-align: center;
+  font-family: verdana;
+  position:relative;
+  /* bottom: 10px; */
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+#bio a {
+  color: blue;
+  font-weight: bold;
+}
+
+#bio li {
+  display: inline;
+  padding: 15px;
+  font-size: 30px;
+  color: blue;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
 #edu    {
   padding: 10px;
   border: solid;
