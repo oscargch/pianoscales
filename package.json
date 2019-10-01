@@ -1,0 +1,23 @@
+{
+  "name": "scalesbykey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd . && http-server -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oscargch/pianoscales.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oscargch/pianoscales/issues"
+  },
+  "homepage": "https://github.com/oscargch/pianoscales#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}

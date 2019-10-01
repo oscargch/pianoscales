@@ -4,7 +4,9 @@
 }
 
 body {
-  display: grid;
+  /* display: grid;
+  grid-template-rows: .4fr 1fr 1fr; */
+  background-color: blue;
 }
 
 a {
@@ -19,7 +21,7 @@ h1 {
   padding-top: 10px;
 }
 
-hr {
+#bio hr {
   float: left;
   color: black;
   width: 30%;
@@ -30,10 +32,10 @@ hr {
 }
 
 #header {
-  width: 1fr;
+  /* width: 1fr;
   height: auto;
-  display: grid;
-  grid-template-rows: auto;
+  display: grid; */
+  /* grid-template-rows: fit-content(40%); */
   text-align: justify;
   text-overflow: ellipsis;
   /* white-space: nowrap; */
@@ -108,23 +110,28 @@ a:hover {
 } */
 
 #main {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
+  /* grid-template-rows: 1fr 5fr 1fr;
+  background-color: pink; */
+  /* display: grid; */
+  /* grid-template-columns: 1fr; */
+  /* align-items: center; */
   /* float: left; */
-  width: 100%;
+  /* width: 100%; */
+  /* background-color: purple; */
+  /* display: none; */
+  /* grid-row: 2 / span 1; */
 }
 
-#container {
-  /* background: black; */
+/* #container {
+  background: black;
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
   align-self: center;
-}
+} */
 
 #bio    {
-  display: grid;
+  /* display: grid; */
   padding: 0px;
   border: solid;
   border-width: 1px;
@@ -133,6 +140,7 @@ a:hover {
   /* outline: .65em solid black; */
   margin: 0px;
   text-overflow: ellipsis;
+  background-color: white;
 }
 
 #bio    h2 {
@@ -216,7 +224,7 @@ a:hover {
 transform: scale(1.2);
 }
 
-#aside h3 {
+/* #aside h3 {
   font-family: verdana;
   text-align: center;
 }
@@ -233,22 +241,22 @@ transform: scale(1.2);
 
 #aside a:hover {
   color: red;
-}
+} */
 
 #footer {
-  display: grid;
-  height: 35vh;
-  background-color: blue;
+  /* display: grid; */
+  height: 5px;
+  background-color: black;
 }
 
-#clr {
+/* #clr {
   clear: both;
-}
+} */
 
 #pianopic {
   display: grid;
-  grid-template-columns: 10px 10px 10px;
-  grid-template-rows: 10;
+  /* grid-template-columns: 10px 10px 10px;
+  grid-template-rows: 10; */
   margin-left: auto;
   margin-right: auto;
   padding-top: 0px;
